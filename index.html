@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caret</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236aaa64'/><text x='16' y='28' font-size='28' text-anchor='middle' fill='white' font-family='monospace'>^</text></svg>" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <div class="wordmark">
+          <a class="site collapse" href="https://plaintext.guru">plaintext.guru</a><span class="sep collapse">/</span><a href="#/" class="home"><h1>Caret</h1></a>
+        </div>
+        <span id="meta" class="meta"></span>
+      </div>
+      <nav>
+        <a href="#/sheet" id="nav-sheet" class="nav-link">Cheat sheet</a>
+        <span id="star-total" class="star-total" title="Stars earned"></span>
+        <button id="btn-help" class="ghost" aria-label="How to play">?</button>
+      </nav>
+    </header>
+
+    <main id="map-view" class="map hidden"></main>
+    <main id="sheet-view" class="sheet hidden"></main>
+
+    <main id="level-view" class="play hidden">
+      <section class="brief">
+        <h2 id="title"></h2>
+        <div id="goal" class="goal"></div>
+        <div class="actions">
+          <button id="btn-check" class="primary">Check</button>
+          <button id="btn-reset" class="ghost">Start over</button>
+        </div>
+        <div id="result" class="result"></div>
+        <div id="help" class="help">
+          <p id="stakes" class="stakes"></p>
+          <div class="help-buttons">
+            <button id="btn-tools" class="ghost">Toolbox</button>
+            <button id="btn-steps" class="ghost">Walk me through it</button>
+          </div>
+          <div id="tools" class="card" hidden></div>
+          <div id="steps" class="card" hidden></div>
+        </div>
+      </section>
+      <section class="work">
+        <label class="pattern-box">
+          <span class="slash">/</span>
+          <input id="pattern" aria-label="Your pattern" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" />
+          <span class="slash">/</span>
+          <input id="flags" aria-label="Flags" placeholder="flags" maxlength="4" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" />
+        </label>
+        <label id="replace-box" class="pattern-box" hidden>
+          <span class="slash">→</span>
+          <input id="replacement" aria-label="Your replacement" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" />
+        </label>
+        <p id="status" class="status" role="status"></p>
+        <div class="lists">
+          <div><h3>Should match</h3><ul id="want-match" class="lines"></ul></div>
+          <div><h3>Shouldn't match</h3><ul id="want-reject" class="lines"></ul></div>
+        </div>
+      </section>
+    </main>
+    <dialog id="modal">
+      <button class="close" aria-label="Close">×</button>
+      <div id="modal-body" tabindex="-1"></div>
+    </dialog>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
